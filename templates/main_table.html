@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+{% endblock %}
+
+{% block content %}
+
+    <h1> Welcome at Api Wars if you want to see the planets of the galaxy press the button below </h1><br>
+    <button id="show_planets">Open the Galaxy </button>
+    <div>
+        <table id="galaxy">
+        </table>
+    </div>
+
+
+
+<div id="myModal" class="modal">
+    <div class="modal-content" id="modal-content">
+    <span class="close">&times;</span>
+    </div>
+
+</div>
+
+{% endblock %}

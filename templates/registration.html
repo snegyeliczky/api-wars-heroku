@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+{% endblock %}
+
+{%block content%}
+<div class="registration">
+    <form action="/registration" method="post">
+        <label for="username">USERNAME:</label><br>
+        <input name="username" id="username" placeholder="Username"><br>
+        <label for="password">PASSWORD:</label><br>
+        <input name="password" id="password" placeholder="Password "><br>
+        <label for="passwordrepeat">REPEAT PASSWORD:</label><br>
+        <input name="passwordrepeat" id="passwordrepeat" placeholder="Repeat Password"><br>
+        <button type="submit">SUBMIT</button>
+    </form>
+</div>
+
+<p>{{error_message if error_message else ''}}</p>
+{% endblock %}

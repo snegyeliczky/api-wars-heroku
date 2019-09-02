@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ApiWars</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header" id="headerBox">
+            <div class="header" id="title">
+                <a href="/"><h1>ApiWars</h1></a>
+            </div>
+            {% if not username %}
+            <div class="header" id="registration">
+                <a href="/registration"><div>REGISTRATION</div></a>
+            </div>
+            <div class="header" id="login">
+                LogIN
+            </div>
+            {% else %}
+            <div class="header">
+                <div >Hello {{username}}</div>
+            </div>
+            <div class="header" >
+                <a href="{{url_for('logout') }}"><div> LOGOUT </div></a>
+            </div>
+            {% endif %}
+
+        </div>
+    </header>
+    {% block content %} {% endblock %}
+</body>
+</html>

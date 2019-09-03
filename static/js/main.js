@@ -1,5 +1,5 @@
 import {showPlanets,addButtonClickListener} from "./planets.js";
-import {logIn} from "./Login.js";
+import {logIn} from "./logIn.js";
 
 
 let showPlanet =document.getElementById("show_planets")
